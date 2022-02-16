@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="LOGIN" timestamp="2022-02-16T09:47:30" time="6.982" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="LOGIN"/>
+      <property name="capabilities" value="chrome.98_0_4758_102.windows"/>
+      <property name="file" value=".\src\test-scripts\TC_002_Login_wrong_username.js"/>
+    </properties>
+    <testcase classname="chrome.98_0_4758_102.windows.LOGIN" name="Login_with_wrong_username" time="0.994"/>
+  </testsuite>
+</testsuites>
