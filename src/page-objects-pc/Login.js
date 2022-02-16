@@ -1,8 +1,10 @@
-const LOGIN_ERR_TXT = "#flash-messages";
-const USER_NAME_TXTBX = '#username';
-const PASSWORD_TXTBX = '#password';
-const LOGIN_BTN = '[type="submit"]';
+const { assert } = require("chai");
 
+const LOGIN_ERR_TXT = "#flash-messages";
+const USER_NAME_TXTBX = 'input[name=email]';
+const PASSWORD_TXTBX = 'input[name=password]';
+const LOGIN_BTN = '.btn-signin';
+const LOGIN_ERROR_ALERT = "div.container > div.ct-container-login-page.box-fix-column > div.form-login-right.box-fix-with > form > div.alert.alert-danger > ul > li";
 class Login {
 
     waitForUsernameDisplayed() {
@@ -42,5 +44,9 @@ class Login {
         expect(currentLoginErr).to.include(expectedErrText);
     }
 
+    verifyErrorExist(){
+        let isExisting = $(LOGIN_ERROR_ALERT).isExisting();
+        assert.isTrue(isExisting);
+    }
 }
 module.exports = new Login();

@@ -1,7 +1,7 @@
 let LoginData = require('../test-data/TC_001_LoginOK');
 
-let LoginPage = require('../page-objects/Login');
-let WelcomePage = require('../page-objects/Welcome');
+let LoginPage = require('../page-objects-pc/Login');
+let WelcomePage = require('../page-objects-pc/Welcome');
 
 describe('LOGIN', () => {
 
@@ -16,8 +16,7 @@ describe('LOGIN', () => {
             .inputUsername(VALID_LOGIN_CREDS.username)
             .inputPassword(VALID_LOGIN_CREDS.password)
             .clickOnLoginBtn();
-            
-        WelcomePage.verifyWelcomeText();
+        WelcomePage.verifyLogoutBtnShow();
     });
 
 });
