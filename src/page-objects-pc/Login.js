@@ -46,7 +46,7 @@ class Login {
 
     verifyErrorExist(){
         let isExisting = $(LOGIN_ERROR_ALERT).isExisting();
-        assert.isTrue(isExisting);
+        expect(isExisting).to.be.true;
     }
 }
 module.exports = new Login();
