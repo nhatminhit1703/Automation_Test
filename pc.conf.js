@@ -10,6 +10,9 @@ exports.config = {
     ],
 
     suites: {
+        productDetail:[
+            "src/test-scripts-pc/003_Is_Clickable.js"
+        ],
         login: [
             "src/test-scripts-pc/001_Login_OK.js",
             "src/test-scripts-pc/002_Login_Wrong.js"
@@ -27,26 +30,26 @@ exports.config = {
     maxInstances: 5,
 
     capabilities: [
+        {
+            browserName: "chrome",
+            'goog:chromeOptions': {
+                args: ['--window-size=1280,768']
+            }
+        },
+        {
+            browserName: "firefox",
+            'goog:firefoxOptions': {
+                args: ['--window-size=1280,768']
+            }
+        }
+        // ,
         // {
-        //     browserName: "chrome",
-        //     'goog:chromeOptions': {
-        //         args: ['--window-size=1280,768']
-        //     }
-        // },
-        // {
-        //     browserName: "firefox",
-        //     'goog:firefoxOptions': {
+        //     browserName: "MicrosoftEdge"
+        //     , 
+        //     'goog:MicrosoftEdgeOptions': {
         //         args: ['--window-size=1280,768']
         //     }
         // }
-        // ,
-        {
-            browserName: "MicrosoftEdge"
-            // , 
-            // 'goog:MicrosoftEdgeOptions': {
-            //     args: ['--window-size=1280,768']
-            // }
-        }
     ],
     runner: 'local',
 
@@ -78,8 +81,15 @@ exports.config = {
     afterTest: (test) => {
         // 1. I wanna save a PNG File when the test failed
         if (test.passed === false) {
-            let fileName = test.fullTitle;
-            browser.saveScreenshot('./' + fileName + '.png')
+            let d = new Date,
+            dformat = [d.getMonth()+1,
+               d.getDate(),
+               d.getFullYear()].join('_')+'_'+
+              [d.getHours(),
+               d.getMinutes(),
+               d.getSeconds()].join('_');
+            let fileName = test.fullTitle + "_" + dformat ;
+            browser.saveScreenshot('./images/' + fileName + '.png')
         }
     },
 }

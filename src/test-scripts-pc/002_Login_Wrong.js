@@ -10,7 +10,7 @@ describe('LOGIN', () => {
         browser.url('/login');
     });
 
-    it('Login with wrong username', () => {
+    it('Login_invalid', () => {
         LoginPage
             .inputUsername(INVALID_LOGIN.username)
             .inputPassword(INVALID_LOGIN.password)
