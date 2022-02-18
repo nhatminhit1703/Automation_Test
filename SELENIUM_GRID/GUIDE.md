@@ -26,11 +26,11 @@ I wanna register to the HUB a node with below info:
 GUIDE 
 
 Step1.
-java -jar selenium-server-standalone-3.5.3.jar -role hub -port 4444
+java -jar ./SELENIUM_GRID/selenium-server-standalone-3.5.3.jar -role hub -port 4444
 Step2.
-java -jar -Dwebdriver.gecko.driver=./geckodriver.exe \
--Dwebdriver.chrome.driver=./chromedriver.exe \
--Dwebdriver.edge.driver=./msedgedriver.exe \
-./selenium-server-standalone-3.5.3.jar -role node -nodeConfig ./node_config.json
+java -jar -Dwebdriver.gecko.driver=./SELENIUM_GRID/geckodriver.exe \
+-Dwebdriver.chrome.driver=./SELENIUM_GRID/chromedriver.exe \
+-Dwebdriver.edge.driver=./SELENIUM_GRID/msedgedriver.exe \
+./SELENIUM_GRID/selenium-server-standalone-3.5.3.jar -role node -nodeConfig ./SELENIUM_GRID/node_config.json
 Step3.
  npm test selenium.conf.js -- --suite login

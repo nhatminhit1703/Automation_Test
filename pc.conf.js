@@ -4,7 +4,7 @@ exports.config = {
 
     // Test Scripts
     specs: [
-        "src/test-scripts/TC_001_LoginOK.js",
+        "src/test-scripts-pc/004_Check_Broken_Links.js",
         // "src/test-scripts/TC_002_Login_wrong_username.js",
         // "src/test-scripts/TC_003_Login_wrong_password.js"
     ],
@@ -35,13 +35,14 @@ exports.config = {
             'goog:chromeOptions': {
                 args: ['--window-size=1280,768']
             }
-        },
-        {
-            browserName: "firefox",
-            'goog:firefoxOptions': {
-                args: ['--window-size=1280,768']
-            }
         }
+        // ,
+        // {
+        //     browserName: "firefox",
+        //     'goog:firefoxOptions': {
+        //         args: ['--window-size=1280,768']
+        //     }
+        // }
         // ,
         // {
         //     browserName: "MicrosoftEdge"
@@ -58,7 +59,7 @@ exports.config = {
     port: 4444,
     // path: '//',
 
-    baseUrl: "http://192.168.88.218",
+    baseUrl: "http://68.183.225.211",
 
     // Test Framework
     framework: 'mocha',
