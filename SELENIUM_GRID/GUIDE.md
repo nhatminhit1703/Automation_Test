@@ -33,4 +33,4 @@ java -jar -Dwebdriver.gecko.driver=./SELENIUM_GRID/geckodriver.exe \
 -Dwebdriver.edge.driver=./SELENIUM_GRID/msedgedriver.exe \
 ./SELENIUM_GRID/selenium-server-standalone-3.5.3.jar -role node -nodeConfig ./SELENIUM_GRID/node_config.json
 Step3.
- npm test selenium.conf.js -- --suite login
+ npm test pc.conf.js -- --suite login
